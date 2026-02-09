@@ -4,7 +4,7 @@ A tiny Node.js + Socket.IO app that synchronizes playback across devices on the 
 
 ## ✅ What you get
 
-- `/admin` page with **Soundcheck**, **Song**, and **Stop** buttons
+- `/admin` page with dynamically-loaded play buttons + stop control
 - `/` client page for all devices to receive cues and play in sync
 - Audio is preloaded and decoded in advance to avoid buffering
 
