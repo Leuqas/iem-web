@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASH</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="client">
+    <main class="card">
+      <h1>After School Hours<br>IEM</h1>
+      <p class="subtitle">Waiting for cues from the admin device.</p>
+
+      <div class="button-row">
+        <button id="enable-audio" class="primary">Enable Audio</button>
+        <button id="resync" class="primary big" style="height: 300px;" disabled>Resync to Current</button>
+      </div>
+      <div class="status" id="status">Not connected yet.</div>
+      <div class="status" id="preload">Audio not loaded.</div>
+
+      <div class="small">Leave this screen open during playback.</div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/vendor/howler.min.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>

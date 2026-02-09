@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASH ADMIN</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="admin">
+    <main class="card">
+      <h1>After School Hours | IEM Admin</h1>
+      <p class="subtitle">Tap a button to schedule playback on all devices.</p>
+      <div class="status" id="ip">Loading local IP…</div>
+      <div class="qr" id="qr" aria-live="polite">QR loading…</div>
+
+      <div class="button-row" id="track-buttons"></div>
+      <div class="button-row">
+        <button id="stop" class="danger admin-stop">Stop</button>
+      </div>
+
+      <div class="status" id="status">Waiting for action.</div>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/vendor/qrcodejs/qrcode.min.js"></script>
+    <script src="/admin.js"></script>
+  </body>
+</html>

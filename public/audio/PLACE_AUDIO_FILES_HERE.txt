@@ -1,0 +1,4 @@
+Put your audio files in this folder:
+
+- soundcheck.mp3
+- song.mp3

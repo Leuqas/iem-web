@@ -1,0 +1,16 @@
+{
+  "name": "clicktrack-sync",
+  "version": "1.0.0",
+  "description": "Synchronized clicktrack playback for band devices",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node scripts/smoke-test.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "howler": "^2.2.4",
+    "qrcodejs": "^1.0.0",
+    "socket.io": "^4.7.5"
+  }
+}
