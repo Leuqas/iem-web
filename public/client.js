@@ -234,9 +234,6 @@ enableAudioBtn.addEventListener("click", async () => {
     setTimeout(() => {
         requestResync();
     }, 1000);
-    setInterval(() => {
-        requestResync();
-    }, 10000);
   } catch (error) {
     setPreload(`Preload failed: ${error.message}`);
     console.error(`[client ${clientId}] preload error`, error);
