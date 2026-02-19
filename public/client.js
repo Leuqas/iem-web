@@ -215,6 +215,18 @@ socket.on("play", async (payload) => {
   }
 });
 
+socket.on("seek", (payload) => {
+  console.log(`[client ${clientId}] received seek`, payload);
+  const { track, seekTo } = payload;
+  if (howls[track]) {
+    startHowl(track, seekTo);
+    setStatus(`Seeked ${track} to ${seekTo.toFixed(1)}s`);
+    setTimeout(() => {
+      requestResync();
+    }, 1000);
+  }
+});
+
 socket.on("stop", () => {
   console.log(`[client ${clientId}] received stop`);
   stopPlayback();

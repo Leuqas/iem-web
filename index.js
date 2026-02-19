@@ -146,6 +146,19 @@ function buildServer() {
 			}
 		});
 
+		socket.on("admin:seek", (payload, ack) => {
+			const seekTo = payload?.seekTo;
+			if (typeof seekTo !== "number" || !currentPlayback) {
+				if (typeof ack === "function") ack({ ok: false });
+				return;
+			}
+			const newStartAt = Date.now() - seekTo * 1000;
+			currentPlayback = { ...currentPlayback, startAt: newStartAt };
+			console.log(`Broadcast seek to ${seekTo.toFixed(2)}s for ${currentPlayback.track}`);
+			io.emit("seek", { track: currentPlayback.track, seekTo });
+			if (typeof ack === "function") ack({ ok: true, startAt: newStartAt });
+		});
+
 		socket.on("admin:stop", () => {
 			console.log("Broadcast stop");
 			currentPlayback = null;
